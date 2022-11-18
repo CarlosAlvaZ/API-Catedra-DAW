@@ -93,10 +93,10 @@ const elementController = {
     addRecord: async (req, res) => {
         const { id } = req.params
         const newElement = {
-            genero: req.body.genero,
-            edad: req.body.edad,
-            estatura: req.body.estatura,
-            peso: req.body.peso
+            genero: req.body.gender,
+            edad: req.body.age,
+            estatura: req.body.height,
+            peso: req.body.wheight
         }
         const response = await elementServices.addRecord(id, newElement)
         return res.status(200).json({

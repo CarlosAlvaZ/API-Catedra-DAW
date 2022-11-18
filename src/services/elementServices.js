@@ -84,18 +84,28 @@ export const elementServices = {
         }
     },
     getRecord: async (id) => {
-        const elements = await Element.find({ _id : id })
-        const [{record}] = elements
-        return record
+        try {
+            const elements = await Element.find({ _id : id })
+            const [{record}] = elements
+            return record
+        } catch (err) {
+            return err
+        }
     },
     addRecord: async (id, newElement) => {
-        const elements = await Element.find({ _id: id })
-        const [{record}] = elements
-        return Element.findByIdAndUpdate(
-            id,
-            { record : [...record, newElement] },
-            { new : true }
-        )
+        try {
+            const elements = await Element.find({ _id: id })
+            console.log(id)
+            const [{record}] = elements
+            return Element.findByIdAndUpdate(
+                id,
+                { record : [...record, newElement] },
+                { new : true }
+            )
+        } catch (err) {
+            console.log("Error ocurred", err)
+            return err
+        }
     },
     setImc: (id, newImc) => {
         return Element.findByIdAndUpdate(
