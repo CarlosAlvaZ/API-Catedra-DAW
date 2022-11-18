@@ -22,7 +22,7 @@ router.post("/routines/:id", elementController.addRoutine)
 
 router.post("/record/:id", elementController.addRecord)
 
-router.delete("/routines/:id", elementController.deleteRoutine)
+router.delete("/routines/user/:userId/id/:id", elementController.deleteRoutine)
 
 router.put("/:id", elementController.updateAllRoutines)
 
