@@ -13,7 +13,7 @@ router.get("/record/:id", elementController.getRecord)
 
 router.get("/imc/:id", elementController.getImc)
 
-router.get("/user", elementController.authUser)
+router.patch("/user", elementController.authUser)
 
 router.post("/", elementController.store)
 

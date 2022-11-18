@@ -34,7 +34,8 @@ const elementController = {
             registro: req.body.registro,
             record: req.body.record,
             rutinas: req.body.rutinas,
-            imc: req.body.imc
+            imc: req.body.imc,
+            password: req.body.password
         }
         const elementStored = await elementServices.store(newElement)
         return res.status(200).json({
