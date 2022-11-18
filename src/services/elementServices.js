@@ -108,7 +108,8 @@ export const elementServices = {
         try{
             const userData = await Element.find({ usuario: user })
             const [{ password }] = userData
-            return password == userPassword
+            const [{ _id }] = userData
+            return {valid: password == userPassword, id: _id}
         } catch (err) {
             return err
         }
