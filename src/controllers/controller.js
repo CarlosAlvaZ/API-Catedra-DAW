@@ -56,7 +56,7 @@ const elementController = {
     },
     deleteRoutine: async (req, res) => {
         const userId = req.params.userId
-        const id = req.body.id
+        const id = req.params.id
         const response = await elementServices.deleteRoutine(id, userId)
         return res.status(200).json({
             data: response

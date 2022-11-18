@@ -55,6 +55,7 @@ export const elementServices = {
                 { new : true }
             )
         } catch (error) {
+            console.log(error)
             return error
         }
     },
