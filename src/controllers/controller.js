@@ -123,9 +123,9 @@ const elementController = {
         })
     },
     authUser: async (req,res) => {
-        const { name } = req.body
-        const { password } = req.body
-        const response = await elementServices.authUser(name, password)
+        const usuario = req.params.usuario
+        const password = req.params.password
+        const response = await elementServices.authUser(usuario, password)
         return res.status(200).json({
             data: response
         })

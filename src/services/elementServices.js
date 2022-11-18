@@ -104,10 +104,11 @@ export const elementServices = {
             { new : true }
         )
     },
-    authUser: async (user, password) => {
+    authUser: async (user, userPassword) => {
         try{
             const userData = await Element.find({ usuario: user })
-            return userData.password == password
+            const [{ password }] = userData
+            return password == userPassword
         } catch (err) {
             return err
         }
